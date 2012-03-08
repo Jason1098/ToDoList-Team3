@@ -4,6 +4,12 @@ class ListsController < ApplicationController
   def new
   end
   
+  def show
+    @list = List.find(params[:id])
+    @task = @list.tasks.new
+    @tasks = Task.all
+  end
+  
   def index
     @list = List.new
     @list.user = current_user

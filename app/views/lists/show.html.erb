@@ -1,0 +1,26 @@
+<h1><%= @list.name %></h1>
+
+<%= @list.id %>
+
+<%= form_for [@list, @task] do |l| %>
+	<div class="field">
+		<%= l.label :name, 'Name'%>
+		<%= l.text_field :name %>
+		
+	</div>
+	<div class="field">
+		<%= l.label :due_date, 'Date'%>
+		<%= l.text_field :due_date %>
+	</div>
+	<div class="field">
+		<%= l.label :priority, 'Priority'%>
+		<%= l.text_field :priority %>
+	</div>
+	<div class="actions">
+		<%= l.submit %>
+	</div>
+<% end %>
+
+<% @tasks.each do |list| %>
+<%= list.name %><br />
+<% end %>
