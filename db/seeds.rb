@@ -8,3 +8,4 @@
 
 User.delete_all
 User.create(email:'fake@fake.com', password: 'mvclover')
+
