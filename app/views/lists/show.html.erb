@@ -1,6 +1,6 @@
 <h1><%= @list.name %></h1>
 
-<%= @list.id %>
+<%= @list.description %>
 
 <%= form_for [@list, @task] do |l| %>
 	<div class="field">
@@ -20,7 +20,8 @@
 		<%= l.submit %>
 	</div>
 <% end %>
-
-<% @tasks.each do |list| %>
-<%= list.name %><br />
-<% end %>
+<ul>
+	<% @tasks.each do |list| %>
+		<li><%= list.name %></li>
+	<% end %>
+</ul>

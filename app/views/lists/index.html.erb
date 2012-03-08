@@ -1,10 +1,15 @@
-<h1>Welcome <%=current_user.email%>. These are your lists</h1>
-
+<div class="block">
+<h3>Welcome <%=current_user.email%>. These are your lists</h3>
+</div>
 <div class="span9">
 	<%= form_for(@list) do |l| %>
 		<div class="field">
-			<%= l.label :name, 'Name'%>
+			<%= l.label :name, 'What is the name of your new list?'%>
 			<%= l.text_field :name %>
+		</div>
+		<div class="field">
+			<%= l.label :description, 'Want to add a description?'%>
+			<%= l.text_field :description %>
 		</div>
 		<div class="actions">
 			<%= l.submit %>
@@ -15,9 +20,9 @@
 <div class="span3">
 	<ul>
 		<% current_user.lists.each do |list| %>
-		<li>	
-			<%= list.name %> | <%= list.id %>
-		</li>
+			<li>	
+				<%= link_to list.name, list_path(list) %>
+			</li>
 		<% end %>
 	</ul>
 </div>
