@@ -20,11 +20,7 @@
 <div class="span3">
 	<ul>
 		<% current_user.lists.each do |list| %>
-			<% if completed?(list) %>
-			<li class="completed"><%= link_to list.name, list_path(list) %></li>
-			<%else%>
 			<li><%= link_to list.name, list_path(list) %></li>
-			<%end%>
 		<% end %>
 	</ul>
 </div>
