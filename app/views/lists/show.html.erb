@@ -1,0 +1,10 @@
+<h1><%=@current_list.name%></h1>
+<h4><%=@current_list.description%></h4>
+<div class="span3">
+<ol>
+<% @current_list.tasks.each do |task| %>
+<li>	
+		<%= link_to task.name, task_path(task) %>
+</li>
+<% end %>
+</div>

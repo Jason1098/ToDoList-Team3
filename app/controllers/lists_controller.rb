@@ -23,4 +23,7 @@ class ListsController < ApplicationController
     end
   end
 
+  def show
+    @current_list = List.find_by_id(params[:id])
+  end
 end
