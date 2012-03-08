@@ -1,8 +1,22 @@
 <h1>Welcome <%=current_user.email%>. These are your lists</h1>
-<ul>
+
+<div class="span9">
+	<%= form_for(@list) do |l| %>
+		<div class="field">
+			<%= l.label :name, 'Name'%>
+			<%= l.text_field :name %>
+		</div>
+		<div class="actions">
+			<%= l.submit %>
+		</div>
+	<% end %>
+</div>
+
+<div class="span3">
+<ol>
 <%current_user.lists.each do |list| %>
-<li>
-		
+<li>	
 	<%=list.name%>
 </li>
 <%end%>
+</div>
