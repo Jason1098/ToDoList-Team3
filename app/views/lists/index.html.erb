@@ -1,5 +1,5 @@
 <div class="block">
-<h3>Welcome <%=current_user.email%>. These are your lists</h3>
+<h3>Welcome <%=current_user.email%></h3>
 </div>
 <div class="span9">
 	<%= form_for(@list) do |l| %>
@@ -18,10 +18,16 @@
 </div>
 
 <div class="span3">
+
+	<% if current_user.lists.empty? %>
+	<h3>You currently have no lists</h3>
+	<% else %>
+	<h4>These are your lists</h4>
 <ol>
 <% current_user.lists.each do |list| %>
 <li>	
 		<%= link_to list.name, list_path(list) %>
 </li>
+	<% end %>
 <% end %>
 </div>
