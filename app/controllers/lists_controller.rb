@@ -6,17 +6,20 @@ class ListsController < ApplicationController
   
   def index
     @list = List.new
+    @list.user = current_user
   end
 
   
   def create
-    @list = current_user.lists.build(params[:list])
+    @list = List.new(params[:list])
+    @list.user = current_user
     if @list.save
       flash[:success] = "New To Do List created!"
       redirect_to root_path
     else
       flash.now[:error] = "Woops! Something went wrong.. :("
-      render :index
+      # redirect_to root_path
+      render :action => 'index' 
     end
   end
 
