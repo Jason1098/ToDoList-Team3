@@ -1,2 +1,8 @@
-<h1>Lachy Sucks</h1>
-
+<h1>Welcome <%=current_user.email%>. These are your lists</h1>
+<ul>
+<%current_user.lists.each do |list| %>
+<li>
+		
+	<%=list.name%>
+</li>
+<%end%>
