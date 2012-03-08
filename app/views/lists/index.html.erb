@@ -20,7 +20,7 @@
 <div class="span3">
 	<ul>
 		<% current_user.lists.each do |list| %>
-			<li><%= link_to list.name, list_path(list) %></li>
+			<li><%= link_to list.name, list_path(list) %> | Delete? </li>
 		<% end %>
 	</ul>
 </div>
