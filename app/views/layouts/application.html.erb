@@ -18,9 +18,11 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Lists<b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="">List 1</a></li>
-								<li><a href="">List 2</a></li>
-								<li><a href="">List 3</a></li>
+								<% current_user.lists.each do |list| %>
+									<li>	
+										<%= link_to list.name, list_path(list) %>
+									</li>
+								<% end %>
 							</ul>
 						</li>
 					</ul>
