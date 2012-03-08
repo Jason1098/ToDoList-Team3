@@ -6,7 +6,7 @@ class ListsController < ApplicationController
   
   def show
     @list = List.find(params[:id])
-    @task = @list.tasks.new
+    @task = Task.new
     @tasks = Task.all
   end
   

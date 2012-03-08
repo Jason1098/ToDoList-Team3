@@ -3,17 +3,17 @@ class Task < ActiveRecord::Base
   
   belongs_to :list
   
-  # validates :name, :completed, :priority, presence: :true
+  validates :name, :priority, presence: :true
   
-  before_save :default_priority, :set_incomplete
+  # before_validation :default_priority#, :set_incomplete
   
   def default_priority
     self.priority = 1 unless self.priority
   end
   
-  def set_incomplete
-    self.completed = 0
-  end
+  # def set_incomplete
+  #   self.completed = false
+  # end
   
 end
 

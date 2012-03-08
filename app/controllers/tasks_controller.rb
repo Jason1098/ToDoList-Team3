@@ -1,7 +1,13 @@
 class TasksController < ApplicationController
   def create
     @list = List.find(params[:list_id])
-    @task = @list.tasks.new(params[:task])
+
+    #@task = @list.tasks.build(params[:task])
+
+    @task = Task.new(params[:task])
+    @task.list_id = @list.id
+    # @task.list = @list
+
     if @task.save
       flash[:notice] = "New ToDo created!"
       redirect_to list_path(@list)
@@ -13,8 +19,6 @@ class TasksController < ApplicationController
 
   def edit
   end
-  
-  
 
   def destroy
   end
