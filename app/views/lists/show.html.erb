@@ -22,6 +22,6 @@
 <% end %>
 <ul>
 	<% @list.tasks.each do |task| %>
-		<li><%= task.name %> | Complete? | <%= link_to "Delete", list_task_path(@list, task), :class => "btn btn-danger", :method => :delete %></li>
+		<li><%= task.name %> | <%= link_to "Complete", toggle_completed_list_task_path(@list, task), :method => :put %>  | <%= link_to "Delete", list_task_path(@list, task), :class => "btn btn-danger", :method => :delete %></li>
 	<% end %>
 </ul>

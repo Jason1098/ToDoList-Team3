@@ -19,6 +19,19 @@ class TasksController < ApplicationController
 
   def edit
   end
+  
+  def toggle_completed
+    @list = List.find(params[:list_id])
+    @task = Task.find(params[:id])
+    @task.completed ? @task.completed = false : @task.completed = true
+    if @task.save
+      flash[:notice] = "Task completed: #{@task.completed}"
+      redirect_to list_path(@list)
+    else
+      flash.now[:error] = "Woops! Something went wrong with the completed saving.. :("
+      render 'lists/show'
+    end
+  end
 
   def destroy
     @list = List.find(params[:list_id])
