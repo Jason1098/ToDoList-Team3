@@ -1811,6 +1811,7 @@ table .span12 {
   padding: 2px 6px;
   font-size: 11px;
   line-height: 14px;
+  border-radius: 5px;
 }
 .btn-primary,
 .btn-primary:hover,

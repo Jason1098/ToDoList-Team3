@@ -17,10 +17,10 @@
 	<% end %>
 </div>
 
-<div class="span3">
+<div class="span6">
 	<ul>
 		<% current_user.lists.each do |list| %>
-			<li><%= link_to list.name, list_path(list) %> | <%= link_to "delete", list, method: :delete, :class => "btn btn-danger"%></li>
+			<li><%= link_to list.name, list_path(list) %>  <%= link_to "EDIT this list", list, method: :edit, :class => "btn btn-mini"%> |  <%= link_to "delete this list", list, method: :delete, :class => "btn-mini btn-danger"%></li>
 		<% end %>
 	</ul>
 </div>

@@ -10,6 +10,9 @@ class ListsController < ApplicationController
     @tasks = Task.all
   end
   
+  def edit
+  end
+  
   def index
     @list = List.new
     @list.user = current_user

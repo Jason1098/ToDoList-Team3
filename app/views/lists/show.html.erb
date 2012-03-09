@@ -1,15 +1,17 @@
-<h1><%= @list.name %></h1>
 
+<h2>Add a task to <%= @list.name %></h2>
+
+<div class=>
 <%= @list.description %>
 
 <%= form_for [@list, @task] do |l| %>
 	<div class="field">
-		<%= l.label :name, 'Name'%>
+		<%= l.label :name, 'Task Name'%>
 		<%= l.text_field :name %>
 		
 	</div>
 	<div class="field">
-		<%= l.label :due_date, 'Date'%>
+		<%= l.label :due_date, 'Due Date'%>
 		<%= l.text_field :due_date %>
 	</div>
 	<div class="field">
