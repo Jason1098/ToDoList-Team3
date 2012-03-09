@@ -21,7 +21,7 @@
 	</div>
 <% end %>
 <ul>
-	<% @list.tasks.each do |list| %>
-		<li><%= list.name %> | Complete? | Delete?</li>
+	<% @list.tasks.each do |task| %>
+		<li><%= task.name %> | Complete? | <%= link_to "Delete", list_task_path(@list, task), :class => "btn btn-danger", :method => :delete %></li>
 	<% end %>
 </ul>
