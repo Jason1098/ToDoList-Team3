@@ -1,10 +1,5 @@
 Todone::Application.routes.draw do
   
-  post "tasks/create"
-
-  get "tasks/edit"
-
-  get "tasks/destroy"
   
   devise_for :users
   

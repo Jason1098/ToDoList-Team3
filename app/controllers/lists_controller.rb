@@ -24,9 +24,14 @@ class ListsController < ApplicationController
       redirect_to root_path
     else
       flash.now[:error] = "Woops! Something went wrong.. :("
-      # redirect_to root_path
       render :action => 'index' 
     end
+  end
+  
+  def destroy
+    @list = List.find_by_id(params[:id])
+    @list.destroy
+    redirect_to root_path
   end
 
 end
