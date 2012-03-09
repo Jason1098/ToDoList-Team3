@@ -2,3 +2,7 @@
 
 require ::File.expand_path('../config/environment',  __FILE__)
 run Todone::Application
+
+
+require 'omniauth'
+require 'omniauth-google-oauth2'

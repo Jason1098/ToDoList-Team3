@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(:version => 20120308225214) do
     t.integer  "list_id"
     t.string   "name"
     t.date     "due_date"
-    t.boolean  "completed"
+    t.boolean  "completed",  :default => false
     t.integer  "priority"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "users", :force => true do |t|
