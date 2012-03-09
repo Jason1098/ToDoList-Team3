@@ -21,5 +21,9 @@ class TasksController < ApplicationController
   end
 
   def destroy
+    @list = List.find(params[:list_id])
+    Task.find(params[:id]).destroy
+    flash[:success] = "Short URL Successfully Deleted!"
+    redirect_to list_path(@list)
   end
 end
